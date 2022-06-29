@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:teleradiology/Constants/colors.dart';
-import 'package:teleradiology/views/cart.dart';
-import 'package:teleradiology/views/order_summery.dart';
-import 'package:teleradiology/views/profile.dart';
-import 'package:teleradiology/views/service_homepage.dart';
-import 'package:teleradiology/views/widgets/drawer_widget.dart';
+import 'package:teleradiology/Constants/servicecolors.dart';
+import 'package:teleradiology/service screen/order_summery.dart';
+import 'package:teleradiology/service%20screen/service_profile.dart';
+import 'package:teleradiology/service screen/service_homepage.dart';
+import 'package:teleradiology/service screen/widgets/drawer_widget.dart';
 
 import 'most_visited.dart';
 import 'order_history.dart';
@@ -16,8 +15,9 @@ import 'services.dart';
 GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
 class ServiceMainScreen extends StatefulWidget {
-  //  int curindex;
-  ServiceMainScreen({Key? key, }) : super(key: key);
+  ServiceMainScreen({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<ServiceMainScreen> createState() => _ServiceMainScreenState();
@@ -27,9 +27,8 @@ class _ServiceMainScreenState extends State<ServiceMainScreen> {
   int _currentIndex = 0;
   List pageList = [
     ServiceHomePage(),
-    // ServicePage(),
-    ProfileScreen(),
-    OrderHistory(),
+    ServiceProfileScreen(),
+    ServiceOrderSummery(),
     MostVisitedScreen(),
   ];
   @override
@@ -38,7 +37,7 @@ class _ServiceMainScreenState extends State<ServiceMainScreen> {
       child: Scaffold(
         key: scaffoldKey,
         drawer: MyDrawer(),
-        backgroundColor: background,
+        backgroundColor: _currentIndex == 2 ||  _currentIndex == 3 ?Color(0xffECF7FE) : background ,
         body: pageList[_currentIndex],
         bottomNavigationBar: ClipRRect(
           borderRadius: BorderRadius.only(
@@ -88,7 +87,7 @@ class _ServiceMainScreenState extends State<ServiceMainScreen> {
                 TextStyle(fontFamily: 'NunitoSans', color: Color(0xFF4A4979)),
             onTap: (index) {
               setState(() {
-            _currentIndex = index;
+                _currentIndex = index;
               });
             },
           ),

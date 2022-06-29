@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:teleradiology/Constants/colors.dart';
-import 'package:teleradiology/views/order_history.dart';
+import 'package:teleradiology/Constants/servicecolors.dart';
+import 'package:teleradiology/service screen/order_history.dart';
 
-class OrderSummery extends StatefulWidget {
-  const OrderSummery({Key? key}) : super(key: key);
+class ServiceOrderSummery extends StatefulWidget {
+  const ServiceOrderSummery({Key? key}) : super(key: key);
 
   @override
-  State<OrderSummery> createState() => _OrderSummeryState();
+  State<ServiceOrderSummery> createState() => _ServiceOrderSummeryState();
 }
 
-class _OrderSummeryState extends State<OrderSummery> {
+class _ServiceOrderSummeryState extends State<ServiceOrderSummery> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -276,11 +276,11 @@ class _OrderSummeryState extends State<OrderSummery> {
                   'Continue',
                 ),
                 onPressed: () {
-                  //    Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //       builder: (context) => OrderHistory()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ServiceOrderHistory()),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                     elevation: 5,

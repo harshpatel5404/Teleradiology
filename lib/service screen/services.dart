@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:teleradiology/Constants/colors.dart';
-import 'package:teleradiology/views/demo_service.dart';
-import 'package:teleradiology/views/service_mainscreen.dart';
-import 'package:teleradiology/views/widgets/drawer_widget.dart';
+import 'package:teleradiology/Constants/servicecolors.dart';
+import 'package:teleradiology/service screen/demo_service.dart';
+import 'package:teleradiology/service screen/service_mainscreen.dart';
+import 'package:teleradiology/service screen/widgets/drawer_widget.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
 class ServicePage extends StatefulWidget {
@@ -256,7 +256,8 @@ class _ServicePageState extends State<ServicePage> {
                                         Navigator.push(
                                             context,
                                             MaterialPageRoute(
-                                                builder: (context)=> DemoService()));
+                                                builder: (context) =>
+                                                    DemoService()));
                                       },
                                       style: ElevatedButton.styleFrom(
                                           elevation: 5,

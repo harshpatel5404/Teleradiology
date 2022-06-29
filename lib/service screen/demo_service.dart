@@ -1,8 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:teleradiology/Constants/colors.dart';
-import 'package:teleradiology/views/service_mainscreen.dart';
+import 'package:teleradiology/Constants/servicecolors.dart';
+import 'package:teleradiology/service screen/service_mainscreen.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
 import 'widgets/drawer_widget.dart';

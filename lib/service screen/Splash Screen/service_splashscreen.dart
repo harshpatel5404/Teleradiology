@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:teleradiology/Constants/colors.dart';
+import 'package:teleradiology/Constants/servicecolors.dart';
 import 'package:teleradiology/Constants/dimension.dart';
 import 'package:get/get.dart';
-import '../Sign In/sign_in_page.dart';
+import '../Sign In/service_sign_in_page.dart';
 
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+class ServiceSplashScreen extends StatelessWidget {
+  const ServiceSplashScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class SplashScreen extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {
-                  Get.to(SignInPage());
+                  Get.to(ServiceSignInPage());
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

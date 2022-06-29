@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:teleradiology/Constants/colors.dart';
+import 'package:teleradiology/Constants/servicecolors.dart';
 import 'package:get/get.dart';
 import 'package:teleradiology/Constants/dimension.dart';
-import 'package:teleradiology/views/Verify%20OTP/verify_otp.dart';
+import 'package:teleradiology/service%20screen/Verify%20OTP/service_verify_otp.dart';
 
-class ForgotPassword extends StatefulWidget {
-  const ForgotPassword({Key? key}) : super(key: key);
+class ServiceForgotPassword extends StatefulWidget {
+  const ServiceForgotPassword({Key? key}) : super(key: key);
 
   @override
-  State<ForgotPassword> createState() => _ForgotPasswordState();
+  State<ServiceForgotPassword> createState() => _ServiceForgotPasswordState();
 }
 
-class _ForgotPasswordState extends State<ForgotPassword> {
+class _ServiceForgotPasswordState extends State<ServiceForgotPassword> {
   TextEditingController emailController = TextEditingController();
 
   bool selectedItem = true;
@@ -96,7 +96,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(VerifyOTP());
+                      Get.to(ServiceVerifyOTP());
                     },
                     child: Padding(
                       padding: EdgeInsets.only(

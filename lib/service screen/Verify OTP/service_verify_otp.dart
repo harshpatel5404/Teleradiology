@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:teleradiology/Constants/colors.dart';
+import 'package:teleradiology/Constants/servicecolors.dart';
 import 'package:teleradiology/Constants/dimension.dart';
 
-import '../Forgot Password/reset_password.dart';
+import '../Forgot Password/service_reset_password.dart';
 
-class VerifyOTP extends StatefulWidget {
-  const VerifyOTP({Key? key}) : super(key: key);
+class ServiceVerifyOTP extends StatefulWidget {
+  const ServiceVerifyOTP({Key? key}) : super(key: key);
 
   @override
-  State<VerifyOTP> createState() => _VerifyOTPState();
+  State<ServiceVerifyOTP> createState() => _ServiceVerifyOTPState();
 }
 
-class _VerifyOTPState extends State<VerifyOTP> {
+class _ServiceVerifyOTPState extends State<ServiceVerifyOTP> {
   @override
   Widget build(BuildContext context) {
     var H = MediaQuery.of(context).size.height;
@@ -77,7 +77,7 @@ class _VerifyOTPState extends State<VerifyOTP> {
                   right: ScaleController.W * 0.05),
               child: InkWell(
                 onTap: () {
-                  Get.to(ResetPassword());
+                  Get.to(ServiceResetPassword());
                 },
                 child: Container(
                   height: ScaleController.H * 0.08,

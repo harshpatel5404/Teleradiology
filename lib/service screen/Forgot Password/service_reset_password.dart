@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:teleradiology/Constants/colors.dart';
+import 'package:teleradiology/Constants/servicecolors.dart';
 import 'package:teleradiology/Constants/dimension.dart';
 
 import '../service_mainscreen.dart';
 
-class ResetPassword extends StatefulWidget {
-  const ResetPassword({Key? key}) : super(key: key);
+class ServiceResetPassword extends StatefulWidget {
+  const ServiceResetPassword({Key? key}) : super(key: key);
 
   @override
-  State<ResetPassword> createState() => _ResetPasswordState();
+  State<ServiceResetPassword> createState() => _ServiceResetPasswordState();
 }
 
-class _ResetPasswordState extends State<ResetPassword> {
+class _ServiceResetPasswordState extends State<ServiceResetPassword> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
   bool hidePassword1 = true;

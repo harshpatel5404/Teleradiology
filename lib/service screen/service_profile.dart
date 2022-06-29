@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
-import 'package:teleradiology/views/service_provider_profile.dart';
+import 'package:teleradiology/service screen/service_provider_profile.dart';
 
-import '../Constants/colors.dart';
+import '../Constants/servicecolors.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+class ServiceProfileScreen extends StatefulWidget {
+  const ServiceProfileScreen({Key? key}) : super(key: key);
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<ServiceProfileScreen> createState() => _ServiceProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ServiceProfileScreenState extends State<ServiceProfileScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -28,7 +28,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-             InkWell(
+              InkWell(
                 onTap: () {
                   Get.back();
                 },

@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:teleradiology/Constants/colors.dart';
+import 'package:teleradiology/Constants/servicecolors.dart';
 import 'package:get/get.dart';
 import 'package:teleradiology/Constants/dimension.dart';
-import 'package:teleradiology/views/Forgot%20Password/forgot_password.dart';
+import 'package:teleradiology/service%20screen/Forgot%20Password/service_forgot_password.dart';
+import '../Sign In/service_sign_in_page.dart';
 
-import '../Sign In/sign_in_page.dart';
-
-class SignUpPage extends StatefulWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+class ServiceSignUpPage extends StatefulWidget {
+  const ServiceSignUpPage({Key? key}) : super(key: key);
 
   @override
-  State<SignUpPage> createState() => _SignUpPageState();
+  State<ServiceSignUpPage> createState() => _ServiceSignUpPageState();
 }
 
-class _SignUpPageState extends State<SignUpPage> {
+class _ServiceSignUpPageState extends State<ServiceSignUpPage> {
   TextEditingController userController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController emailController = TextEditingController();
@@ -262,7 +261,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         right: ScaleController.W * 0.05),
                     child: InkWell(
                       onTap: () {
-                        Get.to(ForgotPassword());
+                        Get.to(ServiceForgotPassword());
                       },
                       child: Container(
                         height: ScaleController.H * 0.08,
@@ -296,7 +295,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                       InkWell(
                         onTap: () {
-                          Get.to(SignInPage());
+                          Get.to(ServiceSignInPage());
                         },
                         child: Text(
                           "  Sign In",

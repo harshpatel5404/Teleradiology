@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
-
-import '../Constants/colors.dart';
+import '../Constants/servicecolors.dart';
 
 class ServiceProviderProfile extends StatefulWidget {
   const ServiceProviderProfile({Key? key}) : super(key: key);

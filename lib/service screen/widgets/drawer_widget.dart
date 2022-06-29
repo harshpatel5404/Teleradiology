@@ -4,13 +4,13 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:teleradiology/views/Sign%20In/sign_in_page.dart';
-import 'package:teleradiology/views/order_history.dart';
-import 'package:teleradiology/views/profile.dart';
-import 'package:teleradiology/views/service_mainscreen.dart';
-import 'package:teleradiology/views/service_provider_profile.dart';
+import 'package:teleradiology/service%20screen/Sign%20In/service_sign_in_page.dart';
+import 'package:teleradiology/service screen/order_history.dart';
+import 'package:teleradiology/service%20screen/service_profile.dart';
+import 'package:teleradiology/service screen/service_mainscreen.dart';
+import 'package:teleradiology/service screen/service_provider_profile.dart';
 
-import '../../Constants/colors.dart';
+import '../../Constants/servicecolors.dart';
 import '../services.dart';
 
 class MyDrawer extends StatefulWidget {
@@ -55,7 +55,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Get.to(ProfileScreen());
+                        Get.to(ServiceProfileScreen());
                       },
                       child: CircleAvatar(
                         radius: 40,
@@ -154,7 +154,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           Get.to(ServicePage());
                           break;
                         case 5:
-                          Get.to(OrderHistory());
+                          Get.to(ServiceOrderHistory());
                           break;
 
                         default:
@@ -200,7 +200,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Get.off(SignInPage());
+                        Get.off(ServiceSignInPage());
                       },
                       child: Container(
                         height: size.height * 0.06,

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../Constants/colors.dart';
+import '../../Constants/servicecolors.dart';
 import '../../Constants/dimension.dart';
-import '../Forgot Password/forgot_password.dart';
-import '../Sign Up/sign_up_page.dart';
+import '../Forgot Password/service_forgot_password.dart';
+import '../Sign Up/service_sign_up_page.dart';
 
-class SignInPage extends StatefulWidget {
-  const SignInPage({Key? key}) : super(key: key);
+class ServiceSignInPage extends StatefulWidget {
+  const ServiceSignInPage({Key? key}) : super(key: key);
 
   @override
-  State<SignInPage> createState() => _SignInPageState();
+  State<ServiceSignInPage> createState() => _ServiceSignInPageState();
 }
 
-class _SignInPageState extends State<SignInPage> {
+class _ServiceSignInPageState extends State<ServiceSignInPage> {
   TextEditingController userController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool hidePassword = true;
@@ -130,7 +130,7 @@ class _SignInPageState extends State<SignInPage> {
                 ),
                 InkWell(
                   onTap: () {
-                    Get.to(SignUpPage());
+                    Get.to(ServiceSignUpPage());
                   },
                   child: Padding(
                     padding: EdgeInsets.only(
@@ -158,7 +158,7 @@ class _SignInPageState extends State<SignInPage> {
                 ),
                 InkWell(
                   onTap: () {
-                    Get.to(ForgotPassword());
+                    Get.to(ServiceForgotPassword());
                   },
                   child: Text(
                     "Forgot Password?",
@@ -183,7 +183,7 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                     InkWell(
                       onTap: () {
-                        Get.to(SignUpPage());
+                        Get.to(ServiceSignUpPage());
                       },
                       child: Text(
                         "  Sign Up",
