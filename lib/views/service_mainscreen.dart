@@ -16,15 +16,15 @@ import 'services.dart';
 GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
 class ServiceMainScreen extends StatefulWidget {
-   int curindex;
-  ServiceMainScreen({Key? key, required this.curindex}) : super(key: key);
+  //  int curindex;
+  ServiceMainScreen({Key? key, }) : super(key: key);
 
   @override
   State<ServiceMainScreen> createState() => _ServiceMainScreenState();
 }
 
 class _ServiceMainScreenState extends State<ServiceMainScreen> {
-  // int _currentIndex = 0;
+  int _currentIndex = 0;
   List pageList = [
     ServiceHomePage(),
     // ServicePage(),
@@ -39,13 +39,13 @@ class _ServiceMainScreenState extends State<ServiceMainScreen> {
         key: scaffoldKey,
         drawer: MyDrawer(),
         backgroundColor: background,
-        body: pageList[widget.curindex],
+        body: pageList[_currentIndex],
         bottomNavigationBar: ClipRRect(
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(16), topRight: Radius.circular(16)),
           child: BottomNavigationBar(
             elevation: 0,
-            currentIndex: widget.curindex,
+            currentIndex: _currentIndex,
             selectedItemColor: Color(0xff303E69),
             unselectedItemColor: Color(0xFF7978A0),
             backgroundColor: Color(0xffE0F4FF),
@@ -88,7 +88,7 @@ class _ServiceMainScreenState extends State<ServiceMainScreen> {
                 TextStyle(fontFamily: 'NunitoSans', color: Color(0xFF4A4979)),
             onTap: (index) {
               setState(() {
-                widget.curindex = index;
+            _currentIndex = index;
               });
             },
           ),
