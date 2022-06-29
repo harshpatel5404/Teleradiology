@@ -323,6 +323,7 @@ class _ServiceHomePageState extends State<ServiceHomePage> {
                   "Radiology",
                   style: TextStyle(
                       fontSize: 18,
+                      fontWeight: FontWeight.bold,
                       fontFamily: "NunitoSans",
                       color: Color(0xFF184673)),
                 ),

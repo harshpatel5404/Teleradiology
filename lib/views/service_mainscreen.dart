@@ -16,20 +16,21 @@ import 'services.dart';
 GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
 class ServiceMainScreen extends StatefulWidget {
-  const ServiceMainScreen({Key? key}) : super(key: key);
+   int curindex;
+  ServiceMainScreen({Key? key, required this.curindex}) : super(key: key);
 
   @override
   State<ServiceMainScreen> createState() => _ServiceMainScreenState();
 }
 
 class _ServiceMainScreenState extends State<ServiceMainScreen> {
-  int _currentIndex = 0;
+  // int _currentIndex = 0;
   List pageList = [
     ServiceHomePage(),
-    MostVisitedScreen(),
+    // ServicePage(),
     ProfileScreen(),
     OrderHistory(),
-    ServicePage()
+    MostVisitedScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -38,13 +39,13 @@ class _ServiceMainScreenState extends State<ServiceMainScreen> {
         key: scaffoldKey,
         drawer: MyDrawer(),
         backgroundColor: background,
-        body: pageList[_currentIndex],
+        body: pageList[widget.curindex],
         bottomNavigationBar: ClipRRect(
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(16), topRight: Radius.circular(16)),
           child: BottomNavigationBar(
             elevation: 0,
-            currentIndex: _currentIndex,
+            currentIndex: widget.curindex,
             selectedItemColor: Color(0xff303E69),
             unselectedItemColor: Color(0xFF7978A0),
             backgroundColor: Color(0xffE0F4FF),
@@ -56,13 +57,13 @@ class _ServiceMainScreenState extends State<ServiceMainScreen> {
                   ),
                   label: "Home",
                   backgroundColor: Color(0xFFE0F4FF)),
-              BottomNavigationBarItem(
-                  icon: SvgPicture.asset(
-                    "assets/Images/analytics.svg",
-                    height: 22,
-                  ),  
-                  label: "Analytics",
-                  backgroundColor: Color(0xFFE0F4FF)),
+              // BottomNavigationBarItem(
+              //     icon: SvgPicture.asset(
+              //       "assets/Images/analytics.svg",
+              //       height: 22,
+              //     ),
+              //     label: "Analytics",
+              //     backgroundColor: Color(0xFFE0F4FF)),
               BottomNavigationBarItem(
                   icon: SvgPicture.asset(
                     "assets/Images/profile.svg",
@@ -87,7 +88,7 @@ class _ServiceMainScreenState extends State<ServiceMainScreen> {
                 TextStyle(fontFamily: 'NunitoSans', color: Color(0xFF4A4979)),
             onTap: (index) {
               setState(() {
-                _currentIndex = index;
+                widget.curindex = index;
               });
             },
           ),

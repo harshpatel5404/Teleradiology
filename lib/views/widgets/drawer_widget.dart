@@ -5,9 +5,13 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:teleradiology/views/Sign%20In/sign_in_page.dart';
+import 'package:teleradiology/views/order_history.dart';
+import 'package:teleradiology/views/profile.dart';
 import 'package:teleradiology/views/service_mainscreen.dart';
+import 'package:teleradiology/views/service_provider_profile.dart';
 
 import '../../Constants/colors.dart';
+import '../services.dart';
 
 class MyDrawer extends StatefulWidget {
   const MyDrawer({Key? key}) : super(key: key);
@@ -17,17 +21,17 @@ class MyDrawer extends StatefulWidget {
 }
 
 class _MyDrawerState extends State<MyDrawer> {
-  var onTapIndex = 2;
+  var onTapIndex = 1;
 
   List tileText = [
-    "Service Information",
+    // "Service Information",
     "Profile",
     "Change Password",
     "Manage Service",
-    "Service Details",
+    // "Service Details",
     "Manage Subscription",
     "Manage Featured Subscription",
-    "Payment Receive",
+    "Order History",
     "About",
     "Terms & Conditions"
   ];
@@ -50,7 +54,9 @@ class _MyDrawerState extends State<MyDrawer> {
                 child: Row(
                   children: [
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Get.to(ProfileScreen());
+                      },
                       child: CircleAvatar(
                         radius: 40,
                         backgroundColor: Colors.white,
@@ -139,14 +145,26 @@ class _MyDrawerState extends State<MyDrawer> {
                       setState(() {
                         onTapIndex = index;
                       });
+
+                      switch (index) {
+                        case 0:
+                          Get.to(ServiceProviderProfile());
+                          break;
+                        case 2:
+                          Get.to(ServicePage());
+                          break;
+                        case 5:
+                          Get.to(OrderHistory());
+                          break;
+
+                        default:
+                      }
                     },
                     child: ListTile(
                       title: Row(
                         children: [
-                          // Icon(Icons.settings_applications_sharp),
                           SvgPicture.asset(
                             "assets/Images/drawer$index.svg",
-                            // color: Colors.white,
                             height: 20,
                           ),
                           SizedBox(

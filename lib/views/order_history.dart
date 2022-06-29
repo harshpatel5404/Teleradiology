@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 import 'package:teleradiology/Constants/colors.dart';
 import 'package:teleradiology/views/order_summery.dart';
 
@@ -26,9 +27,14 @@ class _OrderHistoryState extends State<OrderHistory> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Icon(
-                Icons.arrow_back_ios,
-                color: textcolor,
+              InkWell(
+                onTap: () {
+                  Get.back();
+                },
+                child: Icon(
+                  Icons.arrow_back_ios,
+                  color: textcolor,
+                ),
               ),
               Text(
                 "Order History",

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 
 import '../Constants/colors.dart';
 
@@ -26,9 +27,14 @@ class _ServiceProviderProfileState extends State<ServiceProviderProfile> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Icon(
-                Icons.arrow_back_ios,
-                color: textcolor,
+              InkWell(
+                onTap: () {
+                  Get.back();
+                },
+                child: Icon(
+                  Icons.arrow_back_ios,
+                  color: textcolor,
+                ),
               ),
               Text(
                 "Profile",

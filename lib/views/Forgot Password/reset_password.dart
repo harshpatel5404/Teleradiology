@@ -157,7 +157,9 @@ class _ResetPasswordState extends State<ResetPassword> {
                   right: ScaleController.W * 0.05),
               child: InkWell(
                 onTap: () {
-                  Get.to(ServiceMainScreen());
+                  Get.to(ServiceMainScreen(
+                    curindex: 0,
+                  ));
                 },
                 child: Container(
                   height: ScaleController.H * 0.08,

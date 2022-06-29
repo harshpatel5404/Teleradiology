@@ -13,7 +13,7 @@ class ServicePage extends StatefulWidget {
 }
 
 class _ServicePageState extends State<ServicePage> {
-  // GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   bool isSwitched = false;
 
   @override
@@ -22,7 +22,7 @@ class _ServicePageState extends State<ServicePage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: background,
-        // key: scaffoldKey,
+        key: scaffoldKey,
         appBar: AppBar(
           backgroundColor: background,
           elevation: 0,
