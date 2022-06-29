@@ -19,9 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Service App',
       theme: ThemeData(primarySwatch: Colors.blue, fontFamily: "NunitoSans"),
-      home: ServiceMainScreen(
-        curindex: 0,
-      ),
+      home: ServiceMainScreen(),
     );
   }
 }
